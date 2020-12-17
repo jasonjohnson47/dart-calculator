@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <title>Dart Calculator</title>
+        <link href="styles/normalize.css" rel="stylesheet">
+        <link href="styles/calc.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="settings" class="page">
+            <fieldset id="game">
+                <legend>Select Game</legend>
+                <div class="toggle-buttons">
+                    <label class="btn btn-primary" for="301"><input type="radio" id="301" name="game" value="301" /> 301</label>
+                    <label class="btn btn-primary" for="501"><input type="radio" id="501" name="game" value="501" /> 501</label>
+                </div>
+            </fieldset>
+            <fieldset id="num-of-teams">
+                <legend>Number of Teams</legend>
+                <div class="toggle-buttons">
+                    <label class="btn btn-primary" for="1-team"><input type="radio" id="1-team" name="teams" value="1" /> 1</label>
+                    <label class="btn btn-primary" for="2-teams"><input type="radio" id="2-teams" name="teams" value="2" /> 2</label>
+                    <label class="btn btn-primary" for="3-teams"><input type="radio" id="3-teams" name="teams" value="3" /> 3</label>
+                    <label class="btn btn-primary" for="4-teams"><input type="radio" id="4-teams" name="teams" value="4" /> 4</label>
+                </div>
+            </fieldset>
+            <fieldset id="team-names">
+                <legend>Enter Your Team Name</legend>
+                <div class="field-row">
+                    <label for="team-name-1">Team 1</label>
+                    <input type="text" id="team-name-1" name="team-name-1" />
+                </div>
+                <div class="field-row">
+                    <label for="team-name-2">Team 2</label>
+                    <input type="text" id="team-name-2" name="team-name-2" />
+                </div>
+                <div class="field-row">
+                    <label for="team-name-3">Team 3</label>
+                    <input type="text" id="team-name-3" name="team-name-3" />
+                </div>
+                <div class="field-row">
+                    <label for="team-name-4">Team 4</label>
+                    <input type="text" id="team-name-4" name="team-name-4" />
+                </div>
+            </fieldset>
+            <button type="button" class="btn btn-primary" id="submit-settings-btn" name="submit-settings-btn">Let's Go!</button>
+        </div><!-- /#settings -->
+        <div id="calculator" class="page hide">
+            <div id="calc-half-1">
+                <div class="row team-tabs">
+                    <div class="team-tab active" data-team-id="0">
+                        <button type="button" class="team-1 active" value="team1">Team 1</button>
+                        <input class="team-score-input" name="team-1-score" type="number" value="301" readonly="true" />
+                    </div>
+                    <div class="team-tab" data-team-id="1">
+                        <button type="button" class="team-2" value="team2">Team 2</button>
+                        <input class="team-score-input" name="team-2-score" type="number" value="301" readonly="true" />
+                    </div>
+                    <div class="team-tab" data-team-id="2">
+                        <button type="button" class="team-3" value="team3">Team 3</button>
+                        <input class="team-score-input" name="team-3-score" type="number" value="301" readonly="true" />
+                    </div>
+                    <div class="team-tab" data-team-id="3">
+                        <button type="button" class="team-4" value="team4">Team 4</button>
+                        <input class="team-score-input" name="team-4-score" type="number" value="301" readonly="true" />
+                    </div>
+                </div>
+                <div class="row dart-scores">
+                    <button type="button" class="dart-1 active" name="dart-1" value="1">
+                        <span class="dart-score-label">Dart 1 <span class="dart-out"></span></span>
+                        <span class="dart-score">--</span>
+                    </button>
+                    <button type="button" class="dart-2" name="dart-2" value="2">
+                        <span class="dart-score-label">Dart 2 <span class="dart-out"></span></span>
+                        <span class="dart-score">--</span>
+                    </button>
+                    <button type="button" class="dart-3" name="dart-3" value="3">
+                        <span class="dart-score-label">Dart 3 <span class="dart-out"></span></span>
+                        <span class="dart-score">--</span>
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="round-total">
+                        <label for="round-total">Round Total</label>
+                        <input name="round-total" id="round-total" type="number" value="0" min="0" max="180" readonly="true" />
+                    </div>
+                    <button type="button" name="enter" id="enter" value="enter">Enter</button>
+                </div>
+                <div class="row special-buttons">
+                    <button type="button" name="double" id="double" value="double">Double</button>
+                    <button type="button" name="triple" id="triple" value="triple">Triple</button>
+                    <button type="button" name="bull" id="bull" value="25">Bull</button>
+                    <button type="button" name="miss" id="miss" value="0">Miss</button>
+                </div>
+            </div><!-- /#calc-half-1 -->
+            <div id="calc-half-2">
+                <div class="row" id="point-buttons">
+                    <button type="button" name="1" value="1">1</button>
+                    <button type="button" name="2" value="2">2</button>
+                    <button type="button" name="3" value="3">3</button>
+                    <button type="button" name="4" value="4">4</button>
+                    <button type="button" name="5" value="5">5</button>
+                    <button type="button" name="6" value="6">6</button>
+                    <button type="button" name="7" value="7">7</button>
+                    <button type="button" name="8" value="8">8</button>
+                    <button type="button" name="9" value="9">9</button>
+                    <button type="button" name="10" value="10">10</button>
+                    <button type="button" name="11" value="11">11</button>
+                    <button type="button" name="12" value="12">12</button>
+                    <button type="button" name="13" value="13">13</button>
+                    <button type="button" name="14" value="14">14</button>
+                    <button type="button" name="15" value="15">15</button>
+                    <button type="button" name="16" value="16">16</button>
+                    <button type="button" name="17" value="17">17</button>
+                    <button type="button" name="18" value="18">18</button>
+                    <button type="button" name="19" value="19">19</button>
+                    <button type="button" name="20" value="20">20</button>
+                </div>
+                <div class="row" id="number-pad">
+                    <button type="button" name="9" value="9">9</button>
+                    <button type="button" name="8" value="8">8</button>
+                    <button type="button" name="7" value="7">7</button>
+                    <button type="button" name="6" value="6">6</button>
+                    <button type="button" name="5" value="5">5</button>
+                    <button type="button" name="4" value="4">4</button>
+                    <button type="button" name="3" value="3">3</button>
+                    <button type="button" name="2" value="2">2</button>
+                    <button type="button" name="1" value="1">1</button>
+                    <button type="button" name="clear" value="clear">Clear</button>
+                    <button type="button" name="0" value="0">0</button>
+                </div>
+            </div><!-- /#calc-half-2 -->
+        </div><!-- /#calculator  -->
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+        <script src="scripts/scripts.js"></script>
+    </body>
+</html>

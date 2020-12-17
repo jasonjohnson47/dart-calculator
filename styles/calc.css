@@ -1,0 +1,351 @@
+html, body {
+    height:100%;
+}
+body {
+    background-color: #000;
+    color:#999;
+    font-family: Arial, sans-serif;
+}
+.hide {
+    display:none !important;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-weight: normal;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 0 none;
+    border-radius: 5px;
+}
+.btn-primary {
+    color: #000;
+    background-color: #ded88b;
+    font-weight: 700;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #ccc732;
+}
+
+/* --------------- Settings Page --------------- */
+
+#settings {
+    padding:15px;
+    text-align: center;
+}
+fieldset {
+    padding: 0;
+    margin-bottom: 1.5em;
+    border: 0 none;
+}
+legend {
+    display: block;
+    width: 100%;
+    font-size: 1.5em;
+    font-weight: 700;
+    color:#ded88b;
+    margin-bottom: .5em;
+}
+.field-row {
+    margin-bottom:.75em;
+}
+.field-row label,
+.field-row input {
+    display:block;
+    margin: 0 auto;
+}
+.field-row label {
+    margin-bottom: .25em;
+}
+.field-row input {
+    padding:5px 10px;
+    border:3px solid #000;
+    border-radius: 5px;
+}
+.field-row input:focus {
+    border-color:#ded88b;
+}
+@media (max-width: 767px) {
+	#submit-settings-btn {
+        width:100%;
+    }
+}
+
+.toggle-buttons input {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+.toggle-buttons label.btn-primary {
+    color:#ddd;
+    background-color: #535353;
+}
+.toggle-buttons label.active {
+    color: #000;
+    background-color: #ded88b;
+}
+
+/* --------------- Calculator Page --------------- */
+
+#calculator {
+    height: 100%;
+    font-size: 3vh;
+    display: flex;
+}
+@media all and (orientation: portrait) {
+    #calculator {
+        flex-direction: column;
+    }
+}
+#calculator.hide {
+    display: none;
+}
+button {
+    cursor: pointer;
+    background-color: #000;
+    color:#999;
+    border:1px solid #333;
+    padding:0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+input[type=number] {
+    -moz-appearance:textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+#calc-half-1,
+#calc-half-2,
+.row {
+    width:100%;
+    height:100%;
+    margin:auto;
+    flex:1;
+    display:flex;
+}
+#calc-half-1,
+#calc-half-2 {
+    flex-direction: column;
+}
+#point-buttons,
+#number-pad {
+    flex: 5;
+}
+#number-pad {
+    flex-direction: row-reverse;
+}
+.row button,
+.row .round-total {
+    flex:1;
+}
+#point-buttons,
+#number-pad {
+    flex-wrap:wrap;
+    font-size: 1.25em;
+}
+#point-buttons button {
+    flex:20%;
+    transition: background-color 0.5s, color 0.5s;
+}
+#number-pad button {
+    flex:33.333%;
+    transition: background-color 0.5s, color 0.5s;
+}
+#point-buttons button:hover,
+#number-pad button:hover,
+#bull:hover,
+#miss:hover {
+    background-color: #ded88b;
+    color:#000;
+}
+
+#point-buttons button.touch,
+#number-pad button.touch,
+#bull.touch,
+#miss.touch {
+    transition: none;
+}
+#point-buttons button.touch:hover,
+#number-pad button.touch:hover,
+#bull.touch:hover,
+#miss.touch:hover {
+    background-color: #000;
+    color:#999;
+    animation-name: btnEffect;
+    animation-duration: 0.75s;
+}
+@keyframes btnEffect {
+    0% {
+        background-color: #000;
+        color:#999;
+    }
+    20% {
+        background-color: #ded88b;
+        color:#000;
+    }
+    100% {
+        background-color: #000;
+        color:#999;
+    }
+}
+
+.dart-scores .active {
+    background-color: #ded88b;
+    color:#000;
+}
+.dart-scores button {
+    font-size:1.75em;
+    position: relative;
+    padding-top:0.571428em;
+}
+.dart-scores button span.dart-score-label {
+    font-size: 0.4571428em;
+    display: block;
+    width:100%;
+    height:1.25em;
+    line-height:1.25em;
+    position: absolute;
+    top:0;
+    left:0;
+    text-transform: uppercase;
+}
+.dart-out {
+	background-color: #d9b02a;
+	color: #000;
+	padding: 0px 0.5em;
+    border-bottom-left-radius: 4px;
+	display: block;
+	float: right;
+}
+.dart-out.triple {
+    background-color:#CC2300;
+    color: #fff;
+}
+.dart-out.double {
+    background-color:#C96E00;
+    color: #fff;
+}
+
+.round-total {
+    border:1px solid #333;
+    background-color: #535353;
+}
+.round-total.active {
+    background-color: #ded88b;
+    color:#000;
+}
+.round-total label {
+    display: block;
+    text-transform: uppercase;
+    height:1.25em;
+    line-height: 1.25em;
+    font-size: 0.8em;
+    text-align: center;
+}
+.round-total input {
+    display:block;
+    width:100%;
+    height: calc(100% - 0.571428em);
+    padding-left:0;
+    padding-right:0;
+    padding-top:0.571428em;
+    margin-top:-0.571428em;
+    color:#ddd;
+    background-color: transparent;
+    font-size: 1.75em;
+    text-align: center;
+    border:0 none;
+}
+.round-total.active input {
+    color:#000;
+}
+#enter {
+    background-color: #d9b02a;
+    color:#000;
+    font-weight: 700;
+}
+
+.team-tabs {
+    flex:2;
+    font-size: 1.25em;
+    font-weight: 700;
+}
+.team-tab {
+    width:100%;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+}
+.team-tab.hide {
+    display:none;
+}
+.team-tab.active {
+    background-color: #ccc732;
+}
+.team-tab button {
+    width:100%;
+    /*height: 100%;*/
+    flex: 1;
+    background-color: #000;
+}
+.team-tab.active button {
+    background-color: #ccc732;
+    color:#000;
+    border-color: #b7b32d;
+}
+.team-tab input {
+    width:100%;
+    flex: 1;
+    padding:0;
+    color:#999;
+    font-size: 2em;
+    font-weight: 700;
+    display:block;
+    background-color: transparent;
+    text-align: center;
+    border:0 none;
+}
+.team-tab input:disabled {
+    /* Safari iOS */
+    -webkit-text-fill-color: rgba(221, 221, 221, 1);
+    opacity: 1;
+}
+.team-tab.active input {
+    color:#000;
+}
+.team-tab.active input:disabled {
+    /* Safari iOS */
+    -webkit-text-fill-color: rgba(0, 0, 0, 1);
+    opacity: 1;
+}
+
+.dart-scores button,
+.special-buttons button {
+    background-color: #282828;
+}
+.special-buttons .active {
+    background-color:#d9b02a;
+    color:#000;
+    border-color: #b99624;
+}
+#bull,
+#miss {
+    background-color: #000;
+}
