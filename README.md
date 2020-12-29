@@ -3,3 +3,5 @@
 It isn't a polished product - there's definitely more I'd like to do - mainly saving the status of the game to local storage. Don't accidentally close the window or refresh ;)
 
 Someday I may rebuild it in React with all the features I hoped and dreamed of adding.
+
+[Try it out!](https://jasonjohnson47.github.io/dart-calculator/)
